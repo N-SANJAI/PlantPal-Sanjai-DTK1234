@@ -49,6 +49,16 @@ export default function Home() {
     // This would be a mutation in a real app
     console.log("Mark task complete:", taskId);
   };
+  
+  const handleSubmitTaskPhoto = (taskId: number) => {
+    // This would upload a photo when completing a task
+    console.log("Submit photo for task:", taskId);
+  };
+  
+  const handleUpdatePlantPhoto = (plantId: number) => {
+    // This would upload a new photo for the plant
+    console.log("Update plant photo:", plantId);
+  };
 
   const handleViewAllAchievements = () => {
     navigate("/achievements");
@@ -126,12 +136,20 @@ export default function Home() {
                     <h4 className="font-medium text-neutral-900">{task.title}</h4>
                     <p className="text-xs text-neutral-600">{task.description}</p>
                   </div>
-                  <button 
-                    className="bg-primary text-white text-sm py-1 px-3 rounded-lg"
-                    onClick={() => handleMarkTaskComplete(task.id)}
-                  >
-                    Done
-                  </button>
+                  <div className="flex space-x-2">
+                    <button 
+                      className="bg-white border border-neutral-200 text-neutral-600 p-1.5 rounded-lg hover:bg-neutral-50"
+                      onClick={() => handleSubmitTaskPhoto(task.id)}
+                    >
+                      <span className="material-icons text-sm">photo_camera</span>
+                    </button>
+                    <button 
+                      className="bg-primary text-white text-sm py-1 px-3 rounded-lg"
+                      onClick={() => handleMarkTaskComplete(task.id)}
+                    >
+                      Done
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -156,6 +174,7 @@ export default function Home() {
                 key={plant.id} 
                 plant={plant}
                 onClick={() => handlePlantClick(plant.id)}
+                onUpdatePhoto={handleUpdatePlantPhoto}
               />
             ))}
           </div>

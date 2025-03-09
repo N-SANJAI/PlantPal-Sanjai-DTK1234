@@ -7,7 +7,7 @@ type PlantCardProps = {
   onUpdatePhoto?: (plantId: number) => void;
 }
 
-export default function PlantCard({ plant, onClick }: PlantCardProps) {
+export default function PlantCard({ plant, onClick, onUpdatePhoto }: PlantCardProps) {
   // Calculate status based on plant health indicators
   const getStatus = () => {
     if (plant.waterLevel < 30) return { type: 'water', icon: 'water_drop', text: 'Thirsty', color: 'text-red-500', bgColor: 'bg-red-500' };
@@ -34,6 +34,17 @@ export default function PlantCard({ plant, onClick }: PlantCardProps) {
         <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-sm">
           <span className={`material-icons ${status.color} text-sm`}>{status.icon}</span>
         </div>
+        {onUpdatePhoto && (
+          <div 
+            className="absolute bottom-2 right-2 bg-white rounded-full p-1.5 shadow-sm cursor-pointer hover:bg-gray-100"
+            onClick={(e) => {
+              e.stopPropagation();
+              onUpdatePhoto(plant.id);
+            }}
+          >
+            <span className="material-icons text-neutral-600 text-sm">photo_camera</span>
+          </div>
+        )}
       </div>
       <div className="p-3">
         <h4 className="font-medium text-neutral-900">{plant.name}</h4>
