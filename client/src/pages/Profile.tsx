@@ -39,7 +39,7 @@ export default function Profile() {
     location: "Singapore",
     bio: "Plant enthusiast with a passion for tropical species. Learning more about sustainable gardening every day.",
     joinedDate: "Jan 2023",
-    avatar: "/images/dylan-profile.png"
+    avatar: "/images/profile.png"
   };
 
   // Statistics calculations
@@ -119,9 +119,10 @@ export default function Profile() {
 
         {/* Tabs for different sections */}
         <Tabs defaultValue="stats" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="grid grid-cols-3 w-full mb-4">
+          <TabsList className="grid grid-cols-4 w-full mb-4">
             <TabsTrigger value="stats">Stats</TabsTrigger>
             <TabsTrigger value="badges">Badges</TabsTrigger>
+            <TabsTrigger value="photos">Photos</TabsTrigger>
             <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
@@ -193,6 +194,109 @@ export default function Profile() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </TabsContent>
+          
+          {/* Photos Tab */}
+          <TabsContent value="photos" className="space-y-4">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-sm font-medium text-neutral-900 dark:text-white">Plant Photo Library</h3>
+              <button className="text-primary text-sm font-medium flex items-center">
+                <span className="material-icons text-sm mr-1">add_a_photo</span> Add New
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-3">
+              {/* Display our plant photos */}
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant1.jpg" 
+                  alt="Monstera" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant2.jpg" 
+                  alt="Succulent" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant3.jpg" 
+                  alt="Fern" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant4.jpg" 
+                  alt="Cactus" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant5.jpg" 
+                  alt="Orchid" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="aspect-square overflow-hidden rounded-lg relative group">
+                <img 
+                  src="/images/plant6.jpg" 
+                  alt="Bonsai" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <span className="material-icons text-2xl">visibility</span>
+                    <p className="text-xs mt-1">View</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-4">
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center">
+                Tap a photo to view details or add a new photo to your collection
+              </p>
             </div>
           </TabsContent>
 
