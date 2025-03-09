@@ -4,6 +4,7 @@ import { Plant } from "@shared/schema";
 type PlantCardProps = {
   plant: Plant;
   onClick?: () => void;
+  onUpdatePhoto?: (plantId: number) => void;
 }
 
 export default function PlantCard({ plant, onClick }: PlantCardProps) {

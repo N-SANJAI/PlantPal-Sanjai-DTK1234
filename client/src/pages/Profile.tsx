@@ -36,10 +36,10 @@ export default function Profile() {
     name: "Dylan",
     username: user?.username || "plantlover",
     age: 21,
-    location: "New York, USA",
+    location: "Singapore",
     bio: "Plant enthusiast with a passion for tropical species. Learning more about sustainable gardening every day.",
     joinedDate: "Jan 2023",
-    avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=200&h=200"
+    avatar: "/images/dylan-profile.png"
   };
 
   // Statistics calculations
