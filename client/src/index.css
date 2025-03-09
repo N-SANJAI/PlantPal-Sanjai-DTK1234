@@ -10,4 +10,88 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
+  /* Enhanced dark mode styling */
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --primary-hover: 142 70% 40%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 70% 50%;
+  }
+
+  /* Dark mode component overrides */
+  .dark .bg-white {
+    @apply bg-neutral-900;
+  }
+  
+  .dark .text-neutral-900 {
+    @apply text-neutral-50;
+  }
+  
+  .dark .text-neutral-800 {
+    @apply text-neutral-100;
+  }
+  
+  .dark .text-neutral-700 {
+    @apply text-neutral-200;
+  }
+  
+  .dark .text-neutral-600 {
+    @apply text-neutral-300;
+  }
+  
+  .dark .bg-neutral-50 {
+    @apply bg-neutral-800;
+  }
+  
+  .dark .bg-neutral-100 {
+    @apply bg-neutral-800;
+  }
+  
+  .dark .bg-neutral-200 {
+    @apply bg-neutral-700;
+  }
+  
+  .dark .shadow-sm {
+    @apply shadow-none;
+  }
+  
+  .dark .shadow-md {
+    @apply shadow-none;
+  }
+  
+  .dark .bottom-nav-item {
+    @apply text-neutral-400;
+  }
+  
+  .dark .bottom-nav-item.active {
+    @apply text-primary;
+  }
+}
+
+@layer components {
+  /* Custom components */
+  .bottom-nav-item {
+    @apply transition-transform duration-100 ease-in-out;
+  }
+  
+  .bottom-nav-item.active {
+    @apply font-medium transition-transform duration-200 ease-in-out;
+  }
 }

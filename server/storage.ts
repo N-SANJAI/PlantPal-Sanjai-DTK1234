@@ -371,8 +371,11 @@ export class MemStorage implements IStorage {
     const id = this.currentPlantId++;
     const now = new Date();
     const plant: Plant = {
-      ...insertPlant,
       id,
+      userId: insertPlant.userId,
+      name: insertPlant.name,
+      species: insertPlant.species ?? null,
+      imageUrl: insertPlant.imageUrl ?? null,
       healthScore: 100,
       waterLevel: 100,
       lightLevel: 100,
@@ -467,8 +470,14 @@ export class MemStorage implements IStorage {
   async createTask(insertTask: InsertTask): Promise<Task> {
     const id = this.currentTaskId++;
     const task: Task = {
-      ...insertTask,
       id,
+      userId: insertTask.userId,
+      plantId: insertTask.plantId,
+      title: insertTask.title, 
+      type: insertTask.type,
+      description: insertTask.description ?? null,
+      priority: insertTask.priority, 
+      dueDate: insertTask.dueDate ?? null,
       completed: false,
       createdAt: new Date()
     };

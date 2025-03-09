@@ -28,12 +28,12 @@ export default function BottomNavigation() {
 
         <button
           className={`bottom-nav-item flex flex-col items-center py-1 px-3 ${
-            activeTab === "/scan" ? "active text-primary -translate-y-1" : "text-neutral-600"
+            activeTab === "/social" ? "active text-primary -translate-y-1" : "text-neutral-600"
           }`}
-          onClick={() => navigate("/scan")}
+          onClick={() => navigate("/social")}
         >
-          <span className="material-icons">search</span>
-          <span className="text-xs mt-1">Scan</span>
+          <span className="material-icons">people</span>
+          <span className="text-xs mt-1">Social</span>
         </button>
 
         <div className="flex flex-col items-center relative">
