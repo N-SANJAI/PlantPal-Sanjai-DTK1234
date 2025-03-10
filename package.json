@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://n_san.github.io/PlantCareApp",
+  "homepage": "https://N-SANJAI.github.io/PlantCareApp",
 
   "scripts": {
     "dev": "tsx server/index.ts",
